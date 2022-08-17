@@ -16,7 +16,7 @@ export class TarotController {
   @Get('random')
   async random(@Req() req : Request, @Res() res : Response) {
     const data = await this.tarotService.random()
-    data.imageUrl = `${req.hostname}:${process.env.PORT}${data.imageUrl}`
+    data.imageUrl = `${req.hostname}${data.imageUrl}`
     return res.send(data);
   }
 
